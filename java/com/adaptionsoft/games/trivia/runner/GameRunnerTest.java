@@ -40,4 +40,13 @@ public class GameRunnerTest {
 		GameRunner.run(game, rand);	
 		assertEquals(1763398543, checker.checksum.getValue());
 	}
+	
+	@Test
+	public void testSixPlayers() {
+		String[] listaDeJugadores = {"Chet","Pat","Sue","Joe","Tim","Tom"};	
+		game = GameRunner.initialize(listaDeJugadores);
+		
+		GameRunner.run(game, rand);	
+		//assertEquals(1763398543, checker.checksum.getValue());
+	}
 }
