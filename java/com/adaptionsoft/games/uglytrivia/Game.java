@@ -31,15 +31,6 @@ public class Game {
 		return "Rock Question " + index;
 	}
 
-	/**
-	 * Return true if the game is playable.
-	 * 
-	 * @return true if the game is playable.
-	 */
-	public boolean isPlayable() {
-		return (howManyPlayers() >= 2);
-	}
-
 	public boolean add(String playerName) {
 		
 		
@@ -51,11 +42,6 @@ public class Game {
 	    System.out.println(playerName + " was added");
 	    System.out.println("They are player number " + players.size());
 		return true;
-	}
-	
-	public boolean remove(String playerName) {
-	  players.remove(howManyPlayers());
-	  return true;
 	}
 	
 	public int howManyPlayers() {
@@ -109,10 +95,6 @@ public class Game {
 			System.out.println(rockQuestions.removeFirst());		
 	}
 	
-  public static void main(String[] args) {
-    System.out.println("Hello World!"); // Display the string.
-  }
-
 	// randomly return a category
 	private String currentCategory() {
 		if (places[currentPlayer] == 0) return "Pop";
@@ -177,20 +159,6 @@ public class Game {
 		return true;
 	}
 
-	public static class SimpleSingleton {
-    private static SimpleSingleton singleInstance =  new SimpleSingleton();
- 
-    //Marking default constructor private
-    //to avoid direct instantiation.
-    private SimpleSingleton() {
-    }
- 
-    //Get instance for class SimpleSingleton
-    public static SimpleSingleton getInstance() {
- 
-        return singleInstance;
-  }
-}
 	/**
 	 * Tells if the last player won.
 	 */
