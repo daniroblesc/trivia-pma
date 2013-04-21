@@ -47,6 +47,6 @@ public class GameRunnerTest {
 		game = GameRunner.initialize(listaDeJugadores);
 		
 		GameRunner.run(game, rand);	
-		//assertEquals(1763398543, checker.checksum.getValue());
+		assertEquals(1512821208, checker.checksum.getValue());
 	}
 }
