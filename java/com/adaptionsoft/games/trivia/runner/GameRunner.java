@@ -10,14 +10,18 @@ public class GameRunner {
 	private static boolean notAWinner;
 
 	public static void main(String[] args) {
-		Game aGame = new Game();
 		
-		aGame.add("Chet");
-		aGame.add("Pat");
-		aGame.add("Sue");
+		String[] listaDeJugadores = {"Chet","Pat","Sue"};
+		
+		Game aGame = initialize(listaDeJugadores);
 		
 		Random rand = new Random();
 	
+		run(aGame, rand);
+		
+	}
+
+	static void run(Game aGame, Random rand) {
 		do {
 			
 			aGame.roll(rand.nextInt(5) + 1);
@@ -31,6 +35,16 @@ public class GameRunner {
 			
 			
 		} while (notAWinner);
+	}
+
+	static Game initialize(String[] listaDeJugadores) {
+		Game aGame = new Game();
 		
+		for(String jugador : listaDeJugadores) {
+			
+			aGame.add(jugador);
+		}
+		
+		return aGame;
 	}
 }
