@@ -10,6 +10,7 @@ import java.io.PrintStream;
 import java.util.Random;
 import java.util.zip.CRC32;
 import java.util.zip.Checksum;
+import java.io.ByteArrayOutputStream;
 
 public class GameRunnerTest {
 
@@ -48,5 +49,12 @@ public class GameRunnerTest {
 		
 		GameRunner.run(game, rand);	
 		assertEquals(1512821208, checker.checksum.getValue());
+	}
+	
+	@Test
+	public void testAnswerWasCorrectMessage()
+	{	
+		Game game = new Game();
+		assertEquals("Answer was correct!!!!", game.messageAnswerWasCorrect());
 	}
 }
